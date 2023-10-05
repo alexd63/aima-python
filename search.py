@@ -175,7 +175,7 @@ class SimpleProblemSolvingAgentProgram:
 # Uninformed Search algorithms
 
 
-def breadth_first_tree_search(problem):
+def breadth_first_tree_search(problem, h=None, display=False):
     """
     [Figure 3.7]
     Search the shallowest nodes in the search tree first.
@@ -189,6 +189,7 @@ def breadth_first_tree_search(problem):
     while frontier:
         node = frontier.popleft()
         if problem.goal_test(node.state):
+            print(best_first_graph_search (problem, lambda n: n.path_cost + h(n), True))
             return node
         frontier.extend(node.expand(problem))
     return None
@@ -208,6 +209,8 @@ def depth_first_tree_search(problem):
     while frontier:
         node = frontier.pop()
         if problem.goal_test(node.state):
+            print(best_first_graph_search (problem, lambda n: n.path_cost + h(n), True))
+
             return node
         frontier.extend(node.expand(problem))
     return None
