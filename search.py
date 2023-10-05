@@ -437,7 +437,6 @@ class EightPuzzle(Problem):
 
     def find_blank_square(self, state):
         """Return the index of the blank square in a given state"""
-
         return state.index(0)
 
     def actions(self, state):
